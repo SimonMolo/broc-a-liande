@@ -1,0 +1,15 @@
+.header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #DFB141;
+}
+.imgTitle {
+    height: 300px;
+    width: 300px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #02161D;
+}
