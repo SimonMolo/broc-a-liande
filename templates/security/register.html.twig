@@ -1,26 +1,37 @@
 {% extends 'visitor/base.html.twig' %}
+{% block title %}s'enregistrer{% endblock %}
 
 
 {% block main %}
 
     {{ form_start(registrationForm) }}
-    <div class="row flex">
-        <div class="col border">
-            {{ form_row(registrationForm.email) }}
+
+    <div class="row flex border">
+
+        <div class="col">
+            {{ form_label(registrationForm.email)  }}
+            {{ form_widget(registrationForm.email) }}
         </div>
-        <div class="col border">
-            {{ form_row(registrationForm.Password,
-                {
-                label: 'Password'
-            }) }}
+
+        <div class="col">
+            {{ form_label(registrationForm.Password) }}
+            {{ form_widget(registrationForm.Password) }}
         </div>
-        <div class="col border">
-            {{ form_row(registrationForm.firstname) }}
+
+        <div class="col">
+            {{ form_label(registrationForm.firstname) }}
+            {{ form_widget(registrationForm.firstname) }}
         </div>
-        <div class="col border">
-            {{ form_row(registrationForm.name) }}
+
+        <div class="col">
+            {{ form_label(registrationForm.name) }}
+            {{ form_widget(registrationForm.name) }}
         </div>
+
     </div>
-        <button type="submit" class="btn">Register</button>
+        <button type="submit">Terminé</button>
     {{ form_end(registrationForm) }}
+
+
+
 {% endblock %}

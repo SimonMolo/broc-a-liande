@@ -10,16 +10,24 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 
-<header class="header">
-    <div>
-        <div>
-            <img class="imgTitle" src=../../public/img_database/B2.jpg alt="Lettre B logo Broccaliande">
+<header class="header flex border">
+        <div class="divTitle flex">
+            <h1 class="flex brocaLiande"><div class="chopin firstLetter">B</div>roca'liande</h1>
+            <h2 class="h2">Ou comment faire voyager vos Antiquités dans le temps ...  </h2>
+            <img class="imgClock" src="/public/img_database/horloge-removebg-preview.png" alt="Horloge représentant le temps qui passe">
         </div>
-        <h1>Broccaliande</h1>
-        <p>Ou comment faire voyager dans le temps </p>
-    </div>
+
+        <div class="divMenu">
+            <ul class="menuUl flex">
+                <li class="menuLi"><a class="menuA " href="{{ path("home") }}">Accueil</a></li>
+                <li class="menuLi"><a class="menuA" href="#">Espace Brocante</a></li>
+                <li class="menuLi"><a class="menuA" href="#">Espace Blog</a></li>
+                <li class="menuLi"><a class="menuA" href="{{ path("app_login") }}">Connexion</a></li>
+            </ul>
+        </div>
 </header>
-<body>
+
+<body class="body">
         {% block main %}
         {% endblock main %}
 </body>
