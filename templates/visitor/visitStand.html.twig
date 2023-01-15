@@ -1,0 +1,22 @@
+{% extends 'visitor/Base.html.twig' %}
+
+{% block title %}
+    Jour de Borocante
+{% endblock %}
+
+
+{% block main %}
+    <div class="standDiv">
+        <h2>Approchez Messieurs dames, le stand est ouvert !</h2>
+
+        {% for article in articles %}
+            <div class="border lightgrey">
+                <h2>{{ article.title }}</h2>
+                {% if article.time %}
+                    <p>année :{{ article.time }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
