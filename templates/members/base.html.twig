@@ -1,6 +1,3 @@
-<!doctype html>
-<html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,7 +6,6 @@
     <link rel="stylesheet" href={% block css %}"{{ asset('style.css') }}"{% endblock css %}>
     <title>{% block title %} {% endblock %}</title>
 </head>
-
 <header class="header flex border">{# block contain "Brocaliande logo/title OldMan and menu#}
     <div class="blockImgHeader flex"> {# Block contain "Broccaliande" clock and OldMan #}
         <div class="divimgOldMan">
@@ -27,15 +23,17 @@
     <div class="divMenu">
         <ul class="menuUl flex">
             <li class="menuLi"><a class="menuA " href="{{ path("home") }}">Accueil</a></li>
-            <li class="menuLi"><a class="menuA" href="#">Espace Brocante</a></li>
+            <li class="menuLi"><a class="menuA" href="{{ path("memberStand") }}">Espace Brocante</a></li>
             <li class="menuLi"><a class="menuA" href="#">Espace Blog</a></li>
-            <li class="menuLi"><a class="menuA" href="{{ path("app_login") }}">Connexion</a></li>
+            <li class="menuLi"><a class="menuA" href="{{ path("app_logout") }}">Déconexion</a></li>
+            <li class="menuLi"><a class="menuA" href="{{ path("") }}">Espace Admin</a></li>
         </ul>
     </div>
 </header>
 
+
 <body class="body">
-        {% block main %}
-        {% endblock main %}
+{% block main %}
+{% endblock main %}
 </body>
 </html>

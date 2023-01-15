@@ -5,31 +5,32 @@
 {% block main %}
 
     {{ form_start(registrationForm) }}
+<div class="loginFormDiv border lightgrey flex">
+    <div class="row flex ">
+    <h3 class="lightgrey">Identifiez Vous</h3>
 
-    <div class="row flex border">
-
-        <div class="col">
-            {{ form_label(registrationForm.email)  }}
-            {{ form_widget(registrationForm.email) }}
+        <div class="lightgrey">
+           {{ form_label(registrationForm.email) }}
+            <div class="lightgrey">{{ form_widget(registrationForm.email, {attr:{'class': 'lightgrey'} }) }}</div>
         </div>
 
-        <div class="col">
-            {{ form_label(registrationForm.Password) }}
-            {{ form_widget(registrationForm.Password) }}
+        <div class="lightgrey">
+            {{ form_label(registrationForm.Password,'Mot De Passe') }}
+            <div class="lightgrey">{{ form_widget(registrationForm.Password, {attr:{'class': 'lightgrey'} }) }}</div>
         </div>
 
-        <div class="col">
-            {{ form_label(registrationForm.firstname) }}
-            {{ form_widget(registrationForm.firstname) }}
+        <div class="lightgrey">
+            {{ form_label(registrationForm.firstname, 'Prénom') }}
+            <div class="lightgrey">{{ form_widget(registrationForm.firstname, {attr:{'class': 'lightgrey'} }) }}</div>
         </div>
 
-        <div class="col">
-            {{ form_label(registrationForm.name) }}
-            {{ form_widget(registrationForm.name) }}
+        <div class="lightgrey">
+            {{ form_label(registrationForm.name, 'Nom') }}
+            <div class="lightgrey">{{ form_widget(registrationForm.name, {attr:{'class': 'lightgrey'} }) }}</div>
         </div>
-
+        <button class="submitBtn lightgrey" type="submit">Terminé</button>
     </div>
-        <button type="submit">Terminé</button>
+</div>
     {{ form_end(registrationForm) }}
 
 

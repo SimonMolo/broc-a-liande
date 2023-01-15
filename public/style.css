@@ -10,7 +10,8 @@
 }
 @font-face {
     font-family: "CaviarDreams";
-    font-weight: normal;
+    font-weight: normal bold;
+
     src: url("font/CaviarDreams.ttf") format("truetype");
 }
 *{
@@ -39,6 +40,9 @@
     border: 1px solid black;
     flex-direction: column;
 }
+.lightgrey{
+    background-color: lightgray;
+}
                                             /* Broca'liande Logo */
 .brocaLiande{
     align-items:center;
@@ -52,17 +56,38 @@
 .firstLetter{
     font-size: 5rem;
 }
-                                                /* Base */
+.blockImgHeader{
 
+}
+.imgWood{
+    position: absolute;
+    height: 300px;
+    width: 945px;
+    opacity: 25%;
+}
+.divimgOldMan{
+    opacity: 25%;
+}
+.imgBrocaliande{
+    object-position:right ;
+    object-fit: contain;
+    height: 300px;
+
+}
+.divTitle{
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 95px;
+    padding-left: 11%;
+
+}
+                                                /* Base */
 .header{
     justify-content: center;
     text-align: center;
-
-
 }
                                                 /* NavBar */
 .divMenu{
-    padding-top: 10px;
     width: 100%;
 }
 .menuUl{
@@ -88,11 +113,7 @@
     background-color: #111;
 }
                                             /*------------*/
-.divTitle{
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 95px;
-}
+
 .homeLink {
     text-decoration: none;
     list-style: none;
@@ -103,7 +124,7 @@
 }
 .divHomeP {
     align-items: center;
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     padding: 30px;
@@ -112,8 +133,11 @@
     background-position:left top ;
     background-repeat: no-repeat;
     text-align: center;
-
-
+    background-color: lightgray;
+}
+.homeText{
+    width: 60%;
+    margin: 0 auto;
 }
                                                     /* Forms */
 .row{
@@ -121,10 +145,27 @@
     margin: 0 auto;
     width: 60%;
     flex-direction: column;
+    justify-content: space-between;
 }
 .col{
-    margin-left: 20px;
-    color: #DDDDDD;
+  flex-direction: column;
+    text-align: center;
+}
+.inpuntForm{
+
+}
+.loginFormDiv{
+    width: 40%;
+    padding: 30px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.submitBtn{
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
                                                     /* Homepage */
 .brocImg{
