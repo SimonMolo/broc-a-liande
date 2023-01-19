@@ -1,0 +1,29 @@
+{% extends 'admin/base.html.twig' %}
+{% block title %}
+{% endblock %}
+{% block main %}
+    <article class="article_solo border">
+        <div class="lightgrey  article_div_solo flex">
+            <div class="flex div_technique_produit lightgrey">
+                <div>
+                    <h2 class="grey">{{ article.title }}</h2>
+                    {% if article.time %} <p class="grey"><strong class="grey"> années </strong> : {{ article.time }}</p>{% endif %}
+                </div>
+                    <div class="fiche_techique lightgrey">
+                        <p class="border lightgrey description_solo"><strong class="lightgrey">Description :</strong><br> {{ article.desciption }}</p>
+                    <div class="lightgrey flex spaceAround div_qualite">
+                        {% if  article.qualite %}
+                            <p class="lightgrey qualite"><strong class="lightgrey">Qualitée(s) :<br></strong> {{ article.qualite }}</p>
+                        {% endif %}
+                        {% if article.defauts %}
+                            <p class="lightgrey default"><strong class="lightgrey">Défaut(s) :<br></strong>{{ article.defauts }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="photo_article_fiche">
+                <img class="photo_article" src="{{ asset('/public/product_directory/' ~ article.articleFilename) }}" alt="">
+            </div>
+        </div>
+    </article>
+{% endblock %}

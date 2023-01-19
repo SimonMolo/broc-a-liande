@@ -33,6 +33,11 @@
     font-style: normal;
     color: darkred;
 }
+.grey{
+    background-color: #333;
+    color: #DDDDDD;
+    width: 100%;
+}
 .flex{
     display: flex;
 }
@@ -42,6 +47,9 @@
 }
 .lightgrey{
     background-color: lightgray;
+}
+.spaceAround{
+    justify-content: space-around;
 }
                                             /* Broca'liande Logo */
 .brocaLiande{
@@ -62,10 +70,7 @@
 .imgWood{
     position: absolute;
     height: 300px;
-    width: 945px;
-    opacity: 25%;
-}
-.divimgOldMan{
+    width: 950px;
     opacity: 25%;
 }
 .imgBrocaliande{
@@ -180,4 +185,107 @@
     padding: 10px;
     font-size: 1.5rem;
     list-style: none;
+}
+                                                /*Menu admin*/
+.adminTitle{
+    text-align: center;
+    padding: 20px;
+}
+.addObjectDiv{
+    margin: 0 auto;
+    text-align: center;
+}
+.article_div{
+    width: 100%;
+    align-items: center;
+    height: 310px;
+    justify-content: space-around;
+}
+.article_div_solo{
+    max-width: none;
+    max-height: none;
+}
+
+.article{
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 70%;
+}
+.article_solo{
+    max-height:none;
+    max-width: none;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.photo_article{
+    max-height: 100%;
+    max-width: 100%;
+}
+.adminBtn{
+    text-align: center;
+    width: 30%;
+}
+.squelette_article{
+    margin: 20px;
+    width: 25%;
+    height: 50%;
+    align-items: center;
+    padding: 30px;
+}
+.div_technique_produit{
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.fiche_techique{
+    margin: 30px;
+}
+.description_solo{
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
+}
+.divimg{
+    width: 80%;
+    height: 50%;
+    object-position: center;
+    object-fit: cover;
+    justify-content: center;
+}
+.div_qualite{
+    margin: 20px;
+}
+.articleBtn_div{
+    width: 50px;
+    margin: 0 auto;
+}
+.adminTitleStand{
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+.divAdminBtn{
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    padding: 20px;
+}
+.articleTitle{
+    text-align: center;
+}
+.photo_article_fiche{
+    max-width: 50%;
+    max-height: 50%;
+}
+.qualite{
+    border: solid 1px green;
+    padding: 20px;
+}
+.default{
+    border: solid 1px brown;
+    padding: 20px;
 }
