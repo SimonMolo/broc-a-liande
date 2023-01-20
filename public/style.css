@@ -18,7 +18,6 @@
     margin: 0;
     padding: 0;
     background-color:darkgray ;
-
 }
 .body{
     margin: 0 auto;
@@ -33,13 +32,22 @@
     font-style: normal;
     color: darkred;
 }
+
 .grey{
     background-color: #333;
     color: #DDDDDD;
     width: 100%;
+    height: 100%;
 }
 .flex{
     display: flex;
+}
+.column{
+    flex-direction: column;
+}
+.center{
+    align-items: center;
+    margin:0 auto;
 }
 .border{
     border: 1px solid black;
@@ -106,6 +114,14 @@
 .menuLi{
     float: left;
 }
+.a{
+    text-decoration: none;
+    color: #333;
+}
+.p10{
+    padding: 10px;
+}
+
 .menuA{
     background-color: #222;
     display: block;
@@ -144,18 +160,8 @@
     width: 60%;
     margin: 0 auto;
 }
+
                                                     /* Forms */
-.row{
-    height: 50%;
-    margin: 0 auto;
-    width: 60%;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.col{
-  flex-direction: column;
-    text-align: center;
-}
 .inpuntForm{
 
 }
@@ -194,6 +200,22 @@
 .addObjectDiv{
     margin: 0 auto;
     text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.label{
+
+}
+.upload_photo{
+    height: 3rem;
+}
+.add_object_form{
+    width: 45%;
+    margin: 0 auto;
+}
+.widget{
+    background-color: #DDDDDD;
+    border-radius: 5px;
 }
 .article_div{
     width: 100%;
@@ -230,9 +252,10 @@
 .squelette_article{
     margin: 20px;
     width: 25%;
-    height: 50%;
+    height: 60%;
     align-items: center;
     padding: 30px;
+
 }
 .div_technique_produit{
     flex-direction: column;
@@ -245,7 +268,7 @@
 }
 .description_solo{
     width: 80%;
-    padding: 20px;
+    padding: 10px;
     margin: 0 auto;
 }
 .divimg{
@@ -254,6 +277,7 @@
     object-position: center;
     object-fit: cover;
     justify-content: center;
+    padding: 10px;
 }
 .div_qualite{
     margin: 20px;
@@ -263,19 +287,24 @@
     margin: 0 auto;
 }
 .adminTitleStand{
-    width: 50%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    min-height: 50px;
 }
 .divAdminBtn{
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+
     text-align: center;
     width: 400px;
-    padding: 20px;
+    padding-top: 20px;
 }
 .articleTitle{
     text-align: center;
+}
+.div_titre_annee{
+    height: 40px;
 }
 .photo_article_fiche{
     max-width: 50%;
@@ -288,4 +317,11 @@
 .default{
     border: solid 1px brown;
     padding: 20px;
+}
+.Description{
+    height: 10rem;
+    width: 20rem;
+}
+.space_between{
+    justify-content: space-between;
 }

@@ -20,8 +20,8 @@ class Articles
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $time = null;
+    #[ORM\Column(length: 255)]
+    private ?string $time = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $desciption = null;
@@ -52,12 +52,12 @@ class Articles
         return $this;
     }
 
-    public function getTime(): ?int
+    public function getTime(): ?string
     {
         return $this->time;
     }
 
-    public function setTime(?int $time): self
+    public function setTime(?string $time): self
     {
         $this->time = $time;
 

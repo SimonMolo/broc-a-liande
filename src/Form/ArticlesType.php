@@ -17,7 +17,8 @@ class ArticlesType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('Photo', FileType::class,[
+            ->add('articleFilename', FileType::class,[
+                'attr'=> ['class' => 'upload_photo flex center lightgrey'],
                 'mapped'=>false,
                 'required'=>true,
                 'constraints'=>[
@@ -27,14 +28,13 @@ class ArticlesType extends AbstractType
                         ]
                     ])
                 ],
-                'label'=>"Photo de l'article"
             ])
             ->add('time')
             ->add('desciption')
             ->add('Defauts')
             ->add('Qualite')
-            ->add('save', SubmitType::class, [
-                'attr' => ['class' => 'save'],
+            ->add('Envoyer', SubmitType::class, [
+                'attr' => ['class' => 'save lightgrey menuA'],
             ]);
         ;
     }

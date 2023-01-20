@@ -45,7 +45,7 @@ class AdminController extends AbstractController
         $articleForm->handleRequest($request);
         if ($articleForm->isSubmitted() && $articleForm->isValid()) {
             /**@var UploadedFile $articleFile*/
-            $articleFile = $articleForm->get('Photo')->getData();
+            $articleFile = $articleForm->get('articleFilename')->getData();
             if ($articleFile){
             $productFileName = $fileUploader->upload($articleFile);
             $article->setArticleFilename($productFileName);
@@ -88,7 +88,7 @@ class AdminController extends AbstractController
      */
     public function article($id, ArticlesRepository $articlesRepository){
         $article = $articlesRepository->find($id);
-        return $this->render('admin/article.html.twig',['article'=> $article]);
+        return $this->render('admin/adminArticle.html.twig',['article'=> $article]);
     }
 
 }

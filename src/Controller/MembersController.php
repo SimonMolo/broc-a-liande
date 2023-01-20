@@ -2,11 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
+use App\Entity\Articles;
 use App\Repository\ArticlesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\UserRepository;
 
 class MembersController extends AbstractController
 {
@@ -22,6 +21,13 @@ class MembersController extends AbstractController
      */
     public function stand(ArticlesRepository $articlesRepository){
         $articles = $articlesRepository->findAll();
-        return $this ->render("members/stand.html.twig",['articles'=>$articles]);
+        return $this ->render("members/memberStand.html.twig",['articles'=>$articles]);
+    }
+    /**
+     *@Route("members/Product/{id}", name="member_product")
+     */
+    public function article($id, ArticlesRepository $articlesRepository){
+        $article = $articlesRepository->find($id);
+        return $this->render('members/memberArticle.html.twig',['article'=> $article]);
     }
 }

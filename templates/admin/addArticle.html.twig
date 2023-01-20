@@ -1,39 +1,40 @@
 {% extends 'members/base.html.twig' %}
 {% block title %} {% endblock %}
 {% block main %}
-    <div class="border flex lightgrey ">
-        {{ form_start(articleForm) }}
-        <div class="addObjectDiv">
-            <div class="lightgrey">
-                {{ form_label(articleForm, "Nom De l'objet",{'label_attr':{'class': 'lightgrey label'}}) }}
-                {{ form_widget(articleForm.title,{'attr':{'class': 'widget lightgrey titreArticle'}}) }}
+<div class="p10">
+    {{ form_start(articleForm) }}
+    <div class="add_object_form center lightgrey border p10">
+        <div class="flex lightgrey center">
+            <div class="flex column center lightgrey">
+                <div class="p10 lightgrey ">{{ form_label(articleForm, "Nom De l'objet",{'label_attr':{'class': 'lightgrey label'}}) }}</div>
+                <div class="p10 lightgrey" >{{ form_widget(articleForm.title,{'attr':{'class': 'widget lightgrey titreArticle'}}) }}</div>
             </div>
-            <div class="lightgrey">
-                {{ form_label(articleForm, "Année",{'label_attr':{'class': 'lightgrey label'}}) }}
-                {{ form_widget(articleForm.time,{'attr':{'class': 'widget lightgrey annee'}}) }}
-            </div>
-            <div class="lightgrey">
-                {{ form_label(articleForm, "Déscription de l'objet",{'label_attr':{'class': 'lightgrey label'}}) }}
-                {{ form_widget(articleForm.desciption,{'attr':{'class': 'widget Description lightgrey'}}) }}
-            </div>
-            <div class="lightgrey">
-                {{ form_label(articleForm, "Qualitées notoires",{'label_attr':{'class': 'lightgrey label'}}) }}
-                {{ form_widget(articleForm.Qualite,{'attr':{'class': 'widget qualite lightgrey'}}) }}
-            </div>
-            <div class="lightgrey">
-                {{ form_label(articleForm, "Dédauts notoires",{'label_attr':{'class': 'lightgrey label'}}) }}
-                {{ form_widget(articleForm.Defauts,{'attr':{'class': 'widget defauts lightgrey'}}) }}
-            </div>
-            <div class="lightgrey">
-                {{ form_label(articleForm, "Photo du Produit",{'label_attr':{'class': 'lightgrey label imgArticle'}}) }}
-            </div>
-            <div class="lightgrey">
-                 {{ form_widget(articleForm.save, { 'label': 'Valider' }) }}
+            <div class="flex column center lightgrey">
+                <div class=" p10 lightgrey">{{ form_label(articleForm, "Année",{'label_attr':{'class': 'lightgrey label'}}) }}</div>
+                <div class=" p10 lightgrey">{{ form_widget(articleForm.time,{'attr':{'class': 'widget lightgrey annee'}}) }}</div>
             </div>
         </div>
-      {{ form_end(articleForm) }}
-
-
+        <div class="flex center column lightgrey">
+            <div class="flex lightgrey column center">
+                <div class=" p10 lightgrey">{{ form_label(articleForm, "Déscription de l'objet",{'label_attr':{'class': 'lightgrey label'}}) }}</div>
+                <div class=" p10 lightgrey">{{ form_widget(articleForm.desciption,{'attr':{'class': 'widget Description lightgrey'}}) }}</div>
+            </div>
+            <div class="flex lightgrey">
+                <div class="flex lightgrey column center">
+                    <div class=" p10 lightgrey">{{ form_label(articleForm, "Qualitées notoires",{'label_attr':{'class': 'lightgrey label'}}) }}</div>
+                    <div class=" p10 lightgrey">{{ form_widget(articleForm.Qualite,{'attr':{'class': 'widget Description lightgrey'}}) }}</div>
+                </div>
+                <div class="lightgrey flex column center">
+                    <div class=" p10 lightgrey">{{ form_label(articleForm, "Dédauts notoires",{'label_attr':{'class': 'lightgrey label'}}) }}</div>
+                    <div class=" p10 lightgrey">{{ form_widget(articleForm.Defauts,{'attr':{'class': 'widget Qualité Description lightgrey'}}) }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="center column lightgrey flex">
+            {{ form_label(articleForm.articleFilename, "Photo de l'article", {'label_attr':{'class': 'lightgrey p10'}}) }}
+            {{ form_widget(articleForm.articleFilename) }}
+            {{ form_end(articleForm) }}
+        </div>
     </div>
-
+</div>
 {% endblock %}

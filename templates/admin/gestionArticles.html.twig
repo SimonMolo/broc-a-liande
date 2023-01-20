@@ -2,31 +2,30 @@
 {% block title %}{% endblock %}
 {% block main %}
 <h2 class="adminTitle">Espace Admin</h2>
-    <a href="{{ path('ajoutProduit') }}">Ajouter un article</a>
+    <a class="menuA" href="{{ path('ajoutProduit') }}">Ajouter un article</a>
     <article class="  article flex">
     {% for article in articles %}
         <div class=" lightgrey flex squelette_article border">
             <div class=" lightgrey divimg flex">
-                <img class="photo_article" src="{{ asset('/public/product_directory/' ~ article.articleFilename) }}" alt="">
+                <img class="photo_article " src="{{ asset('/public/product_directory/' ~ article.articleFilename) }}" alt="">
             </div>
-            <div class=" lightgrey adminTitleStand flex">
-                <h2 class=" lightgrey articleTitle">{{ article.title }}</h2>
+            <div class=" grey adminTitleStand flex">
+                <h2 class="grey articleTitle">{{ article.title }}</h2>
                 {% if  article.time  %}
-                    <p class=" lightgrey articleTitle">année :{{ article.time }}</p>
+                    <p class="grey articleTitle">année :{{ article.time }}</p>
                 {% endif %}
-                <div class=" lightgrey flex divAdminBtn">
-                    <div class="adminBtn lightgrey">
-                        <a class="lightgrey"   href="{{ path("admin_product",{"id":article.id}) }}">Voir le Produit</a>
-                    </div>
-                    <div class="adminBtn lightgrey">
-                        <a class="lightgrey" href="{{ path("admin_product_delete",{"id":article.id}) }}">Supprimer le Produit</a>
-                    </div>
-                    <div class="adminBtn lightgrey">
-                        <a class="lightgrey" href="{{ path("admin_product_update",{"id":article.id}) }}">modifier le produit</a>
-                    </div>
+            </div>
+            <div class=" lightgrey flex divAdminBtn">
+                <div class="adminBtn lightgrey border">
+                    <a class="lightgrey a menuA"   href="{{ path("admin_product",{"id":article.id}) }}">Voir le Produit</a>
+                </div>
+                <div class="adminBtn lightgrey border">
+                    <a class="lightgrey a menuA" href="{{ path("admin_product_delete",{"id":article.id}) }}">Supprimer le Produit</a>
+                </div>
+                <div class="adminBtn lightgrey border">
+                    <a class="lightgrey a menuA" href="{{ path("admin_product_update",{"id":article.id}) }}">modifier le produit</a>
                 </div>
             </div>
-
         </div>
     {% endfor %}
     </article>
