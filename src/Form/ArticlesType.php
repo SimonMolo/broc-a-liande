@@ -6,6 +6,7 @@ use App\Entity\Articles;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
@@ -31,7 +32,7 @@ class ArticlesType extends AbstractType
             ])
             ->add('time')
             ->add('desciption')
-            ->add('Defauts')
+            ->add('Defauts', TextareaType::class)
             ->add('Qualite')
             ->add('Envoyer', SubmitType::class, [
                 'attr' => ['class' => 'save lightgrey menuA'],
