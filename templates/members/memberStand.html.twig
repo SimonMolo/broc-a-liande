@@ -7,8 +7,8 @@
         <h2>Approchez Messieurs dames, le stand est ouvert !</h2>
         <article class="  article flex">
             {% for article in articles %}
-                <div class=" lightgrey flex squelette_article border">
-                    <div class=" lightgrey divimg flex">
+                <div class=" flex squelette_article">
+                    <div class=" divimg flex">
                         <img class="photo_article " src="{{ asset('/public/product_directory/' ~ article.articleFilename) }}" alt="">
                     </div>
                     <div class=" grey adminTitleStand flex">
@@ -17,9 +17,9 @@
                             <p class="grey articleTitle">année :{{ article.time }}</p>
                         {% endif %}
                     </div>
-                    <div class=" lightgrey flex divAdminBtn">
-                        <div class="adminBtn lightgrey border">
-                            <a class="lightgrey a menuA"   href="{{ path("member_product",{"id":article.id}) }}">Voir le Produit</a>
+                    <div class=" flex divAdminBtn">
+                        <div class="adminBtn border">
+                            <a class="a menuA"   href="{{ path("member_product",{"id":article.id}) }}">Voir le Produit</a>
                         </div>
                     </div>
                 </div>

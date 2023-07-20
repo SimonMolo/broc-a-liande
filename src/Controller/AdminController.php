@@ -73,14 +73,30 @@ class AdminController extends AbstractController
      */
     public function updateProduct($id, Request $request,ArticlesRepository $articlesRepository ,EntityManagerInterface $entityManager){
         $article = $articlesRepository->find($id);
+        $originalArticleFilename = $article->getArticleFilename(); // Store the original image filename
+
         $articleForm = $this->createForm(ArticlesType::class, $article);
         $articleForm->handleRequest($request);
+
         if ($articleForm->isSubmitted() && $articleForm->isValid()) {
+            $newArticleFile = $articleForm->get('articleFilename')->getData();
+
+            if ($newArticleFile) {
+                // New image is uploaded, process and save it
+                $productFileName = $fileUploader->upload($newArticleFile);
+                $article->setArticleFilename($productFileName);
+            } else {
+                // No new image uploaded, keep the original image
+                $article->setArticleFilename($originalArticleFilename);
+            }
+
             $entityManager->persist($article);
             $entityManager->flush();
+
             return $this->redirectToRoute('productManagement');
         }
-        return $this->render('admin/updateProduct.html.twig',['articleForm'=> $articleForm->createView()]);
+
+        return $this->render('admin/updateProduct.html.twig', ['articleForm' => $articleForm->createView()]);
     }
                                      /* Vue Produits Individuels */
     /**

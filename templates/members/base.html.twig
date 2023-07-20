@@ -6,30 +6,30 @@
     <link rel="stylesheet" href={% block css %}"{{ asset('style.css') }}"{% endblock css %}>
     <title>{% block title %} {% endblock %}</title>
 </head>
-<header class="header flex border">{# block contain "Brocaliande logo/title OldMan and menu#}
-    <div class="blockImgHeader flex"> {# Block contain "Broccaliande" clock and OldMan #}
-        <div class="divimgOldMan">
-            <img class="imgBrocaliande" src="/public/img_database/pexels-photo-4394526.jpeg" alt="">
-        </div>
-        <div class="divWood">
-            <img class="imgWood" src="/public/img_database/bois.jpg" alt="">
-        </div>
-        <div class="divTitle flex">{#this block contain clock, title with "B" and paragraph #}
-            <h1 class="flex brocaLiande"><div class="chopin firstLetter">B</div>roca'liande</h1>
-            <h2 class="h2">Ou comment faire voyager vos Antiquités dans le temps ...  </h2>
+<header class="header flex ">
+    <div class="blockImgHeader flex">
+        <img class="imgBrocaliande" src="/public/img_database/pexels-photo-4394526.jpeg" alt="">
+        <div class="divClock">
             <img class="imgClock" src="/public/img_database/horloge-removebg-preview.png" alt="Horloge représentant le temps qui passe">
-        </div> {# ----------------------------------------------------- #}
+        </div>
+        <img class="imgWood" src="/public/img_database/bois.jpg" alt="">
     </div>
-    <div class="divMenu">
-        <ul class="menuUl flex">
-            <li class="menuLi"><a class="menuA " href="{{ path("membersHome") }}">Accueil</a></li>
-            <li class="menuLi"><a class="menuA" href="{{ path("memberStand") }}">Espace Brocante</a></li>
-            <li class="menuLi"><a class="menuA" href="#">Espace Blog</a></li>
-            <li class="menuLi"><a class="menuA" href="{{ path("app_logout") }}">Déconexion</a></li>
-            <li class="menuLi"><a class="menuA" href="{{ path("gestion") }}">Espace Admin</a></li>
-        </ul>
+    <div class="divTitle center flex column">
+        <h1 class="flex brocaLiande"><div class="chopin firstLetter">B</div>roca'liande</h1>
+        <h2 class="h2">Ou comment faire voyager vos Antiquités dans le temps ...  </h2>
     </div>
 </header>
+<div class="divMenu">
+    <ul class="menuUl flex">
+        <li class="menuLi"><a class="menuA " href="{{ path("membersHome") }}">Accueil</a></li>
+        <li class="menuLi"><a class="menuA" href="{{ path("memberStand") }}">Notre Stand</a></li>
+        <li class="menuLi"><a class="menuA" href="#">Espace Blog</a></li>
+        <li class="menuLi"><a class="menuA" href="{{ path("app_logout") }}">Déconecter</a></li>
+    </ul>
+</div>
+
+{# ----------------------------------------------------- #}
+
 
 
 <body class="body">

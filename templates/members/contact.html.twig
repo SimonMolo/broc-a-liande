@@ -1,9 +1,8 @@
 {% extends 'members/base.html.twig' %}
-{% block title %} Contact {% endblock %}
-{% block main %}
 
-<h2>Contactez Nous</h2>
-    <div>
-        {{ form(formulaire) }}
-    </div>
+{% block title %} Contact {% endblock %}
+
+{% block main %}
+    <h2>Contactez Nous</h2>
+    {{ form(contactForm) }}
 {% endblock %}

@@ -21,7 +21,7 @@ class ArticlesType extends AbstractType
             ->add('articleFilename', FileType::class,[
                 'attr'=> ['class' => 'upload_photo flex center lightgrey'],
                 'mapped'=>false,
-                'required'=>true,
+                'required'=>false,
                 'constraints'=>[
                     new File([
                         'maxSize'=>'5M',
@@ -32,7 +32,9 @@ class ArticlesType extends AbstractType
             ])
             ->add('time')
             ->add('desciption')
-            ->add('Defauts', TextareaType::class)
+            ->add('Defauts', TextareaType::class,[
+                'required'=>false
+            ])
             ->add('Qualite')
             ->add('Envoyer', SubmitType::class, [
                 'attr' => ['class' => 'save lightgrey menuA'],
