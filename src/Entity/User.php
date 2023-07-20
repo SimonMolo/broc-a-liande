@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'Cette adresse mail est deja utilisée')]
@@ -16,8 +17,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
-    #[ORM\Column(length: 180, unique: true)]
+    /**
+     *@ORM\Column(length: 180, unique: true)]
+     * @Assert\Email(message="l'adresse mail {{value}} n'est pas valide")
+     * @UniqueEntity(email, message="Cette adresse email est deja Utilisée par un autre Utilisateur"
+    */
     private ?string $email = null;
 
     #[ORM\Column]
